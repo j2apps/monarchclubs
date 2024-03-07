@@ -1,0 +1,5 @@
+club_id,club_name,staff_advisors,meeting_times,meeting_location,short_description,long_description,website
+1,Art Club,"John Art, Jane Draw",Wednesdays 2:00PM,Room 201,We do art and stuff,LONG ART DESCRIPTION,art.com
+2,Math Club,"May Math, Al Gebra",Fridays 3:00PM,Room 236,We do math,LONG MATH DESC,math.com
+3,Book Club,Henry Read,Monday Mornings,Library,We read,LONG BOOK DESC,books.com
+4,Climbing Club,Jeff Rock,whenever idk,The Great Outdoors,We climb,LONG CLIMBING DESC,climbing.com
