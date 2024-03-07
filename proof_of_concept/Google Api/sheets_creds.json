@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "intense-cortex-415518",
+  "private_key_id": "3261d74b6f7e9578724d02d769d5f9430e860c77",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDFaeI6dHJlThzb\nt0+2YxqXpb3KojLYnN8kPC5/KGocc4ApsxI8dh3sqdE+YI7A5REfhtI+ntr7uf07\nACpENon8js+6YuPhm6E5VJjVT9BiCvPfSqLkWe2qnNEOOSCpTWpnKFtuMfZpd+Gk\nmyMND5Z2QgvH5TxmwtFryo2/S02HaDY66T1PQaIs/3rLaiKFYZSiXIYzoJDy8bxH\nmqGPIEgHrIDHHd5Jv7yQI46m4b/fXsN3UjfupvwwWuK30+lIloIxhjMj6uelfbxA\ns+x+7z2akqLx+Ag9QTxZHtFJkr5sNBbmvrFJQxHdJrBRq00x5mMOsshpulAYv2Vx\nw/Ah2hY9AgMBAAECggEAC21NGIgcBQwn9HngZdTHucZwvXV1Dv/JlM3c/SRIPBxd\na0x/vjsyETxlLcCmErlPq+0AZ3qHf3GtHEiuqaMkipdzo7zMpwb8ppZkgFht3fb3\nVdH6qtAfxzPrj/CzmMkv4we9fxvqQQGc8IvAVCW2VmMNToVQ4Tvepmgjm1KPCsrd\n7jX8FcRAvLyi005yhK+Qo7LdYSo4NbRK7EDoo1kzLCW07kJgxuSRc8bNWgzPmDGs\nQkpMhcX+mzlkn46sOeBEPHjSLa9udOXgTPy85bK+BM3YWOF4a/6VHvav5X3CFXRv\nsqqN7VOEouSxiTWeeRjLb7eVyE8QDYu6xl03bk0usQKBgQDg+N7R25qhZV9Vh2mY\n6w4M97+rr7CjFRc8siFny7IzQxSw4oLhrNfycPvGyRiecL5GjIHdcOLfKJJlFvZT\n+Z7YRrZEpbKecViZ/WjoR6eOGp+Y5p0BwwjBeqcYxXylpVcPUi9Judbn0o75VZ++\nrQ/n6cvzb5z7CEYEKX0ylaCnNQKBgQDgo//OB1oJlk2tFK1xZqDG6i6lrGu8m8lh\n9JHUsGByrpn3X5LrhW52yiRufnQonmvR6mey20OH8Z1g/B4UJB2dpx8/rPqP+NaJ\nFW9l5zN1oRfXao3JVuR9DyLvzpP7nAKBr3gdxlMHbZpZ9vCNBQoAsaNH13jZhyAc\naKKq0dwr6QKBgQCKNnt2BGu4cjYirqGib+5e6ypXSQXE+2UeRfWd9hfRxImGrnJo\nQS8eZGlaVBuK44sSfqoeKIdJQHzIHFZTew0qpC7Ad+gHzWz4liYIZlU7SYH5hty4\nw2CytS7JWjLc9XpKEFy697BfFg3+gqs0ktAt04YYVd7kns2dKvwewqxDbQKBgF5T\nnvNlVOJXsbAu0ZGflX1REltQ5kBhbhNqvd2AXk9pj483G5s4ASVyRg/7m0z/EKkp\nc3e/6EBqLTpvQzYT4De12EJFoUTZKUSQsqEojwwio785p+XWTcVRmMr3hF4PqWHJ\nS3e9MloZJMoIDgQ5DHU0IirliIJW4h3rtfpiesAZAoGBAJrwr8Q4HouhjN79fKB6\nrEDeBI53W3Vg0sLxi0KuyfABoOVAPAHbU3IQApo0byLhJrV53EZ0AjkwcJsdFZV7\nSlWqfaNmkMYDgbDY8mrBVDjYn+8O8Nv6BcrzT/YHEJsegVHOJOogsKfbRxpvlI1G\nt6OH5rpBs3ol1tLi+p+B71j0\n-----END PRIVATE KEY-----\n",
+  "client_email": "python-api-capstone-cs@intense-cortex-415518.iam.gserviceaccount.com",
+  "client_id": "110966123822482773631",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/python-api-capstone-cs%40intense-cortex-415518.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
