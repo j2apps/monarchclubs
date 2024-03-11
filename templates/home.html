@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Landing Page</title>
+  <link href="{{ url_for('static', filename='styles.css') }}" type = "text/css" rel="stylesheet" >
+</head>
+
+<body>
+  
+<div>
+  <span class = "c">MOHI CLUBS</span>
+</div>
+<div>
+  <span class = "b">CALENDAR</span>
+</div>
+
+<table class = "center">
+  <tr>
+    <th>Club Name</th>
+    <th>Overview</th>
+    <th>Meeting Times</th>
+  </tr>
+  {% for club in clubs %}
+  <tr>
+    <th>{{club["club_name"]}}</th>
+    <th>{{club["short_description"]}}</th>
+    <th>{{club["meeting_times"]}}</th>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+
+</html>
