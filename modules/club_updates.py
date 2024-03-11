@@ -4,9 +4,12 @@ from google_api.google_sheets_api import *
 def check_club_updates():
     edit_df = get_df_from_sheet('club_edit')
     approved_changes = edit_df[edit_df['is_approved']=='Y']
-    rejected_changed = edit_df[edit_df['is_approved']=='N']
 
     club_df = get_df_from_sheet('club')
+
+    #implicitly removes rejected changes
+    remaining = edit_df[edit_df['is_approved']=='']
+    update_sheet_with_df('club_edit', remaining)
 
     for _, change in approved_changes.iterrows():
         update_club(change, club_df)
@@ -14,11 +17,9 @@ def check_club_updates():
 def update_club(change, df):
     id = change['club_id']
     for col, value in change.to_dict().items():
-        if value != '' and col != 'club_id' and col != 'is_approved':
+        if str(value).strip() != '' and col != 'club_id' and col != 'is_approved':
             df.loc[df['club_id']==id, col] = value
     update_sheet_with_df('club', df)
-
-
 
 
 

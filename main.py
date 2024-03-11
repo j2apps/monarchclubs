@@ -1,8 +1,15 @@
-import pandas as pd
 from flask import Flask, render_template
-import requests as rs
-from io import StringIO
-from serve import *
+from modules.serve import *
+from modules.club_updates import *
+import atexit
+from apscheduler.schedulers.background import BackgroundScheduler
+
+# updates clubs every hour
+scheduler = BackgroundScheduler()
+scheduler.add_job(func=check_club_updates, trigger="interval", hours=1)
+scheduler.start()
+
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -25,5 +32,7 @@ def calendar():
 def event(club_id: int, event_id: int):
     return render_template('')
 
+
+atexit.register(lambda: scheduler.shutdown())
 if __name__ == '__main__':
     app.run(port=1090)
