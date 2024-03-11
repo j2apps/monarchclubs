@@ -18,4 +18,4 @@ def get_club_from_id(id: int) -> dict:
 
 
 if __name__ == '__main__':
-    get_club_from_id(2)
+    print(get_club_from_id(1))
