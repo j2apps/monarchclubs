@@ -1,19 +1,16 @@
 import gspread
 from google.oauth2.service_account import Credentials
-
+import os
 import pandas as pd
 
 scopes = [
     "https://www.googleapis.com/auth/spreadsheets"
 ]
-creds = Credentials.from_service_account_file('google_api/sheets_creds.json',scopes=scopes)
+creds = Credentials.from_service_account_file(os.path.dirname(__file__)+'/sheets_creds.json',scopes=scopes)
 client = gspread.authorize(creds)
 
-id_dict = {"club": ("1EtErKxuI_SCU7avKLKxrFqbVsZrVqyKXEfSiQ3J-tHo","Sheet1")}
-
-
-
-
+id_dict = {"club": ("1EtErKxuI_SCU7avKLKxrFqbVsZrVqyKXEfSiQ3J-tHo","Sheet1"),
+           "club_edit": ('1oavfSWb2_M288pCnpDGKd1QA4sodIiOf_QeFZaZ4PDw', 'Sheet1')}
 
 def get_df_from_sheet(sheet_name: str) -> pd.DataFrame:
     worksheet = get_worksheet(sheet_name)
