@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Basic Club Page Template</title>
-  <link rel="stylesheet" href="IndivEventPageStyle.css">
+  <link href="{{ url_for('static', filename='styles.css') }}" type = "text/css" rel="stylesheet" >
 </head>
 
 <div>
     <div>
-      <span class="c";>Club Name</span>
+      <span class="c";>{{club["club_name"]}}</span>
     </div>
     <div>
       <span class="c";>Go Back</span>

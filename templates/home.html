@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Landing Page</title>
-  <link href="style.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles.css') }}" type = "text/css" rel="stylesheet" >
 </head>
 
 <body>
@@ -20,21 +20,14 @@
     <th>Overview</th>
     <th>Meeting Times</th>
   </tr>
+  {% for club in clubs %}
   <tr>
-    <td>Club Name 1</td>
-    <td>Overview 1</td>
-    <td>Meeting Times 1</td>
+    <th>{{club["club_name"]}}</th>
+    <th>{{club["short_description"]}}</th>
+    <th>{{club["meeting_times"]}}</th>
   </tr>
-  <tr>
-    <td>Club Name 2</td>
-    <td>Overview 2</td>
-    <td>Meeting Times 2</td>
-  </tr>
-  <tr>
-    <td>Club Name 3</td>
-    <td>Overview 3</td>
-    <td>Meeting Times 3</td>
-  </tr>
+  {% endfor %}
+</table>
 </body>
 
 </html>
