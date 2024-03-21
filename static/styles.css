@@ -20,7 +20,6 @@ span.c {
   border: 1px solid black;  
   background-color: #9d9215;
   float: left;
-  margin-bottom: 10px;
   margin-right: 20px;
 }
 
@@ -36,7 +35,7 @@ span.b {
 >>>>>>> c38ba6b6d24f68edd573d7eac267dbb28ae4c4b0:static/styles.css
   background-color: #9d9215;
   float: right;
-  margin: left; 
+  margin-left: 20px; 
 }
 
 /*unordered list*/
