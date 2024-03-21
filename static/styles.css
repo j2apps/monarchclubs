@@ -3,7 +3,7 @@ html {
   width: 100%;
 }
 body {
-  font-family: arial; font-size:300%; text-align: center; background-color: powderblue;
+  font-family: arial; font-size:300%; text-align: center; background-color: lightgray;
 }
 h1 {
   color: black;
@@ -18,9 +18,8 @@ span.c {
   display: flexbox;
   padding: 5px;
   border: 1px solid black;  
-  background-color: darkseagreen;
+  background-color: #9d9215;
   float: left;
-  margin-bottom: 10px;
   margin-right: 20px;
 }
 
@@ -29,10 +28,14 @@ span.b {
   font-size: 100%;
   display: flexbox;
   padding: 5px;
+<<<<<<< HEAD:templates/styles.css
+  border: 1px solid black;  
+=======
   border: 1px solid black;
-  background-color: darkseagreen;
+>>>>>>> c38ba6b6d24f68edd573d7eac267dbb28ae4c4b0:static/styles.css
+  background-color: #9d9215;
   float: right;
-  margin: left;
+  margin-left: 20px; 
 }
 
 /*unordered list*/
@@ -47,20 +50,20 @@ tr{
 .center {
   font-size: 100%;
   width: 100%;
-  border: 3px solid darkseagreen;
+  border: 3px solid #9d9215;
   /*allows for scroll bar*/
   overflow: scroll;
 }
 .left {
   margin: left;
   width: 100%;
-  border: 3px solid #FFAD21;
+  border: 3px solid #9d9215;
   padding: 10px;
 }
 .right {
   margin: right;
   width: 100%;
-  border: 3px solid #FFAD21;
+  border: 3px solid #9d9215;
   padding: 10px;
 }
 
