@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Basic Club Page Template</title>
-  <link rel="stylesheet" href="IndivEventPageStyle.css">
+  <link href="{{ url_for('static', filename='styles.css') }}" type = "text/css" rel="stylesheet" >
 </head>
 
 <div>
@@ -16,8 +16,8 @@
       <span class="c";>Home</span>
     </div>
 </div>
-  
-<div>
+
+<div class = "center">
 <h2>Club Description</h2>
 </div>
 
@@ -55,7 +55,7 @@
 </table>
 
 <br>
-  
+
 <h2>Contact Information</h2>
 
 <ul class = "a center">

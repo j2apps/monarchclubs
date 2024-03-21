@@ -29,7 +29,11 @@ span.b {
   font-size: 100%;
   display: flexbox;
   padding: 5px;
+<<<<<<< HEAD:templates/styles.css
   border: 1px solid black;  
+=======
+  border: 1px solid black;
+>>>>>>> c38ba6b6d24f68edd573d7eac267dbb28ae4c4b0:static/styles.css
   background-color: darkseagreen;
   float: right;
   margin: left; 
