@@ -9,7 +9,7 @@ scopes = [
 creds = Credentials.from_service_account_file(os.path.dirname(__file__)+'/sheets_creds.json',scopes=scopes)
 client = gspread.authorize(creds)
 
-sheet_id = '1EtErKxuI_SCU7avKLKxrFqbVsZrVqyKXEfSiQ3J-tHo'
+sheet_id = '1xgoY1gbn867EmpvY0rf4aWf9cTzCPENDwtyGQoXZpe0'
 
 def get_df_from_sheet(sheet_name: str) -> pd.DataFrame:
     worksheet = get_worksheet(sheet_name)
