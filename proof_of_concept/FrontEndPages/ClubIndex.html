@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Club Page</title>
+  <link rel="stylesheet" href="ClubStyle.css">
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="left-image-container">
+    <img src="images.png" alt="Club Image">
+  </div>
+  <div class="calendar-container">
+
+    <div class="top-bar">
+
+  
+  </div>
+  <div class="container">
+    <h3>My Heading</h3>
+    <p>My paragraph text.</p>
+  </div>
+
+  <div class="large-div">
+    <div id="calendar"></div>
+  </div>
+
+
+
+
+<a href="https://www.google.com">
+  <button>Home</button>
+</a>
+
+  </div>
+  <script src="https://unpkg.com/fullcalendar@5.11.3/main.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth'
+      });
+
+      calendar.render();
+    });
+  </script>
+</body>
+</html>
