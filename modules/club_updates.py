@@ -56,14 +56,9 @@ def check_club_create():
     if len(create_df.index)==0: return
     club_df = get_df_from_sheet('club')
 
-    # Filter out edits for invalid club ids
-    id_list = club_df['club_id'].to_list()
-
     # Move approved changes to the club sheet
     approved_changes = create_df[create_df['is_approved'].isin(['Y','y'])]
-    print(approved_changes.index.to_list())
     for i in approved_changes.index.to_list():
-        print(i)
         row = approved_changes[approved_changes.index==i]
         new_club = create_club(row, club_df)
         club_df = pd.concat([club_df, new_club])
@@ -83,9 +78,43 @@ def create_club(new_club, club_df):
     new_club = new_club[columns]
     return new_club
 
+def check_event_create():
+    create_df = get_df_from_sheet('event_create')
 
+    if len(create_df.index) == 0: return
+    event_df = get_df_from_sheet('event')
+
+    # Move approved changes to the club sheet
+    approved_changes = create_df[create_df['is_approved'].isin(['Y', 'y'])]
+    for i in approved_changes.index.to_list():
+        row = approved_changes[approved_changes.index == i]
+        new_event = create_event(row, event_df)
+        event_df = pd.concat([event_df, new_event])
+
+    # Remove event create requests that have either already been processed or have been marked unapproved
+    remaining = create_df[~create_df['is_approved'].isin(['Y', 'y', 'N', 'n'])]
+    update_sheet_with_df('event_create', remaining)
+    update_sheet_with_df('event', event_df)
+
+def create_event(new_event, event_df):
+    # Find the new id based on the max of the current ids
+    event_df_for_specific_club = event_df[event_df['club_id'] == new_event['club_id']]
+    event_id_list = event_df_for_specific_club['event_id'].to_list()
+    # Assign an event ID to the event
+    new_id = max(event_id_list, key=lambda x: int(x) if not np.isnan(x) else 0) + 1
+    new_event['event_id'] = new_id
+    # Get rid of fields not needed for the club
+    columns = event_df.columns.to_list()
+    new_event = new_event[columns]
+    return new_event
+
+def run_checks():
+    check_club_create()
+    check_club_edit()
+    check_event_create()
 
 
 if __name__ == '__main__':
     #check_club_edit()
-    check_club_create()
+    #check_club_create()
+    check_event_create()
