@@ -1,3 +1,4 @@
+/*Add Buttons to Event Page*/
 body {
   margin: 0;
   padding: 0;
@@ -20,6 +21,7 @@ header.top-bar {
   text-decoration: none;
   cursor: pointer;
   font-size: 16px;
+  margin-right: 1cqi;
 }
 
 main {
