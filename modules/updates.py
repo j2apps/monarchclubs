@@ -8,7 +8,7 @@ def check_club_edit():
     club_df = get_df_from_sheet('club')
 
     # So a human can view the entire new proposed state of the club
-    edit_df = fill_unchanged_fields(edit_df, club_df)
+    edit_df = fill_unchanged_club_fields(edit_df, club_df)
 
     # Move approved changes to the club sheet
     approved_changes = edit_df[edit_df['is_approved'].isin(['Y','y'])]
@@ -20,7 +20,7 @@ def check_club_edit():
     remaining = edit_df[~edit_df['is_approved'].isin(['Y','y','N','n'])]
     update_sheet_with_df('club_edit', remaining)
 
-def fill_unchanged_fields(edit_df, club_df):
+def fill_unchanged_club_fields(edit_df, club_df):
     ignored_cols = ['club_id', 'is_approved', 'timestamp', 'email_address']
     edit_df = edit_df.replace(np.nan, '')
 
@@ -108,6 +108,45 @@ def create_event(new_event, event_df):
     new_event = new_event[columns]
     return new_event
 
+
+def check_event_edit():
+    edit_df = get_df_from_sheet('event_edit')
+    if len(edit_df.index)==0: return
+    event_df = get_df_from_sheet('event')
+
+    # So a human can view the entire new proposed state of the club
+    edit_df = fill_unchanged_event_fields(edit_df, event_df)
+
+    # Move approved changes to the club sheet
+    approved_changes = edit_df[edit_df['is_approved'].isin(['Y','y'])]
+    for _, change in approved_changes.iterrows():
+        update_club(change, event_df)
+
+    # Keeps unverified changed
+    # Implicitly removes rejected changes
+    remaining = edit_df[~edit_df['is_approved'].isin(['Y','y','N','n'])]
+    update_sheet_with_df('event_edit', remaining)
+
+def fill_unchanged_event_fields(edit_df, event_df):
+    ignored_cols = ['club_id', 'event_id', 'is_approved', 'timestamp', 'email_address']
+    edit_df = edit_df.replace(np.nan, '')
+
+    # Iterate through every proposed change
+    for _, change in edit_df.iterrows():
+        # Pull current club info from club sheet
+        club_id = change['club_id']
+        event_id = change['event_id']
+        current_event_info = event_df.loc[(event_df['club_id'] == club_id) & (event_df['event_id'] == event_id)].iloc[0]
+
+        # Fill every empty field in the proposed change with the current club info
+        for col, value in change.to_dict().items():
+            if str(value).strip() in ['', np.nan] and col not in ignored_cols:
+                edit_df.loc[(edit_df['club_id'] == club_id) & (edit_df['event_id'] == event_id), col] = current_event_info[col]
+
+    # Remove NaN
+    edit_df = edit_df.replace(np.nan, '')
+    return edit_df
+
 def run_checks():
     check_club_create()
     check_club_edit()
@@ -117,4 +156,4 @@ def run_checks():
 if __name__ == '__main__':
     #check_club_edit()
     #check_club_create()
-    check_event_create()
+    check_event_edit()
