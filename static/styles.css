@@ -18,7 +18,7 @@ span.c {
   display: flexbox;
   padding: 5px;
   border: 1px solid black;  
-  background-color: #9d9215;
+  background-color: #a67e2f;
   float: left;
   margin-right: 20px;
 }
@@ -28,12 +28,8 @@ span.b {
   font-size: 100%;
   display: flexbox;
   padding: 5px;
-<<<<<<< HEAD:templates/styles.css
   border: 1px solid black;  
-=======
-  border: 1px solid black;
->>>>>>> c38ba6b6d24f68edd573d7eac267dbb28ae4c4b0:static/styles.css
-  background-color: #9d9215;
+  background-color: #a67e2f;
   float: right;
   margin-left: 20px; 
 }
@@ -50,20 +46,20 @@ tr{
 .center {
   font-size: 100%;
   width: 100%;
-  border: 3px solid #9d9215;
+  border: 3px solid #a67e2f;
   /*allows for scroll bar*/
   overflow: scroll;
 }
 .left {
   margin: left;
   width: 100%;
-  border: 3px solid #9d9215;
+  border: 3px solid #a67e2f;
   padding: 10px;
 }
 .right {
   margin: right;
   width: 100%;
-  border: 3px solid #9d9215;
+  border: 3px solid #a67e2f;
   padding: 10px;
 }
 

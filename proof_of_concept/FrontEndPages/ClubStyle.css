@@ -70,4 +70,60 @@ p {
   width: 1000px;
   height: 1000px;
 }
+body {
+  font-family: arial; font-size:300%; text-align: center; background-color: lightgray;
+}
+h1 {
+  color: black;
+}
 
+/* displays them as flexboxes */
+span.c {
+  font-size: 100%;
+  display: flexbox;
+  padding: 5px;
+  border: 1px solid black;  
+  background-color: #a67e2f;
+  float: left;
+  margin-right: 20px;
+}
+
+/* other option for display */
+span.b {
+  font-size: 100%;
+  display: flexbox;
+  padding: 5px;
+  border: 1px solid black;
+  background-color: #a67e2f;
+  float: right;
+  margin-left: 20px; 
+}
+
+/*unordered list*/
+ul.a {
+  list-style-type: none;
+  font-size: 50%;
+}
+
+tr{
+  background-color: #ffffff; }
+
+.center {
+  font-size: 100%;
+  width: 100%;
+  border: 3px solid #a67e2f;
+  /*allows for scroll bar*/
+  overflow: scroll;
+}
+
+table {
+font-family: arial;
+border-collapse: collapse;
+width: 100%;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
