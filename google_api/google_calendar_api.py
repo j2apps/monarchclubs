@@ -31,9 +31,9 @@ def authenticate():
     return creds
 
 service = build("calendar", "v3", credentials=authenticate())
-event_dict = {}
 
-
+def create_calendar():
+    pass
 
 def create_event(name,desc,start,end):
     try:
@@ -59,10 +59,12 @@ def create_event(name,desc,start,end):
 
 def delete_event(event_id):
     try:
-        service.events().delete(calendarId = cal_id, eventId = 'sjs252k2emd309b01dt2f81c50').execute()
+        service.events().delete(calendarId = cal_id, eventId = event_id).execute()
         
     except HttpError as error:
         print(error)
+
+        
 
 def update_event(event):
     try:
