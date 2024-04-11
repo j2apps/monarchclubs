@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from modules.serve import *
-from modules.club_updates import *
+from modules.updates import *
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
 
@@ -9,20 +9,20 @@ scheduler = BackgroundScheduler(timezone="America/Denver")
 # Updates clubs every hour
 scheduler = BackgroundScheduler()
 scheduler.add_job(
-    func=check_club_edit,
+    func=run_checks,
     trigger="cron",
     max_instances=1,
     hour='*'
 )
 # Runs from Monday to Friday at 8:30 (am)
-scheduler.add_job(
+'''scheduler.add_job(
     func=send_email,
     trigger="cron",
     max_instances=1,
     day_of_week='mon-fri',
     hour=8,
     minute=30
-)
+)'''
 scheduler.start()
 
 
