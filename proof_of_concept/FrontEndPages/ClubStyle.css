@@ -1,129 +1,75 @@
-.top-bar {
-    background-color: #A67E2F;
-    height: 100px;
- 
-  }
+body {
+  margin: 0;
+  padding: 0;
+}
 
-button {
+header.top-bar {
   background-color: #A67E2F;
-  position: absolute;
-    left: 40px;
-    top: 30px;
-  border-radius: 10px;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 1rem;
+}
 
-  
+.headerb {
+  background-color: #A67E2F;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 1cqi;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap; /* Wrap content on small screens */
+  margin: 1rem;
+}
+
+.large-square {
+  width: 30.8%;  /* Take full width on all screens */
+  height: 620px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  margin: 1rem;
+}
+table {
+  width: 65%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+th {
+  text-align: center;
+}
+
+
+
+
+/* Media Queries for smaller screens */
+
+@media screen and (max-width: 768px) {
+  .large-square{
+    width: 100%; /* Take full width on small screens */
+  }
 }
 
 .title {
-  color: white;
   text-align: center;
-}
-.left-image-container {
-  float: left;
-  width: 40vh;
-  height: 20vh;
-  background-color: #f1f1f1;
-  margin-top: 110px;
-   margin-left: 0px;
-    border: 1px solid black;
-
+  line-height: 200px;
 }
 
-.left-image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.container {
-  width: 260px;
-  height:440px;
-  background-color: #d3d3d3;
-  float: left;
-  margin-top: 175px;
-  margin-left: -313px;
-  border: 1px solid black;
-  overflow: scroll;
-}
 
-h3 {
+
+h1, h3, p {
   text-align: center;
 }
 
-p {
-  text-align: center;
-}
-.large-div {
-  width: 600px;
-  height: 600px;
-  margin: 0 auto;
 
-}
-
-#calendar {
-  width: 1000px;
-  height: 1000px;
-}
-body {
-  font-family: arial; font-size:300%; text-align: center; background-color: lightgray;
-}
-h1 {
-  color: black;
-}
-
-/* displays them as flexboxes */
-span.c {
-  font-size: 100%;
-  display: flexbox;
-  padding: 5px;
-  border: 1px solid black;  
-  background-color: #a67e2f;
-  float: left;
-  margin-right: 20px;
-}
-
-/* other option for display */
-span.b {
-  font-size: 100%;
-  display: flexbox;
-  padding: 5px;
-  border: 1px solid black;
-  background-color: #a67e2f;
-  float: right;
-  margin-left: 20px; 
-}
-
-/*unordered list*/
-ul.a {
-  list-style-type: none;
-  font-size: 50%;
-}
-
-tr{
-  background-color: #ffffff; }
-
-.center {
-  font-size: 100%;
-  width: 100%;
-  border: 3px solid #a67e2f;
-  /*allows for scroll bar*/
-  overflow: scroll;
-}
-
-table {
-font-family: arial;
-border-collapse: collapse;
-width: 100%;
-}
-
-td, th {
-  border: 1px solid black;
-  text-align: left;
-  padding: 8px;
-}
