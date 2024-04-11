@@ -32,9 +32,9 @@ def authenticate():
 
 service = build("calendar", "v3", credentials=authenticate())
 
-def create_calendar():
-    pass
-
+'''
+start and end time must be in YYYY-MM-DDTHH:MM
+'''
 def create_event(name,desc,start,end):
     try:
             
@@ -42,12 +42,13 @@ def create_event(name,desc,start,end):
             "summary": str(name),
             "description": str(desc),
             "start":{
-                "dateTime": f"{start}.00Z"
+                "dateTime": f"{start}:00",
+                "timeZone": "America/Denver"
                     
             },
             "end":{
-                "dateTime": f"{end}.00Z"
-                    
+                "dateTime": f"{end}:00",
+                "timeZone": "America/Denver"
                }
         }
             
@@ -66,12 +67,23 @@ def delete_event(event_id):
 
         
 
-def update_event(event):
+def update_event(event_Id,name,desc,start,end):
     try:
-        service.events().update(calendarId=cal_id,eventId='',body='')
+        details  = {
+            "summary": str(name),
+            "description": str(desc),
+            "start":{
+                "dateTime": f"{start}:00",
+                "timeZone": "America/Denver"
+                    
+            },
+            "end":{
+                "dateTime": f"{end}:00",
+                "timeZone": "America/Denver"
+               }
+        }
+        event = service.events().update(calendarId=cal_id,eventId=event_Id,body=details).execute()
+        return event['id']
         
     except HttpError as error:
         print(error)
-
-
-
