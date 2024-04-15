@@ -1,68 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Monarch Clubs</title>
-  <link href="{{ url_for('static', filename='ClubStyle.css') }}" type = "text/css" rel="stylesheet" >
+  <link rel="stylesheet" href="ClubStyle.css">
 </head>
+<body>
+  <header class="top-bar">
+    <a href="https://www.example.com" class="headerb">Home</a>
+    <a href="https://www.example.com" class="headerb">Calendar</a>
+    <a href="https://www.example.com" class="headerb">Event Page</a>
 
-<div>
-    <div>
-      <span class="c";>Club Name</span>
-    </div>
-    <div>
-      <span class="c";>Go Back</span>
-    </div>
-    <div>
-      <span class="c";>Home</span>
-    </div>
-</div>
+  </header>
 
-<div class = "center">
-<h2>Club Description</h2>
-</div>
+  <div class = "center">
+    <h2>Club Description</h2>
+  </div>
+  
+  <div class="large-square">
+    <h3>Club 1</h3>
+    <p>Description1</p>
+  </div>
 
-<ul class="a center">
-  <li>This club is focused on _______</li>
-  <li>Meets from _______ to _______ on _______ every _______</li>
-  <li>How to join _______</li>
-  <li>Club Sponsor _______</li>
-  <li>Other Info _______</li>
-</ul>
+  <ul class="a center">
+    <li>This club is focused on _______</li>
+    <li>Meets from _______ to _______ on _______ every _______</li>
+    <li>How to join _______</li>
+    <li>Club Sponsor _______</li>
+    <li>Other Info _______</li>
+  </ul>
 
-<br>
+  <br>
+  
+    <table>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+      <tr>
+        <td>Event 1</td>
+        <td>Date 1</td>
+        <td>Time 1</td>
+      </tr>
+      <tr>
+        <td>Event 2</td>
+        <td>Date 2</td>
+        <td>Time 2</td>
+      </tr>
+      <tr>
+        <td>Event 3</td>
+        <td>Date 3</td>
+        <td>Time3</td>
+      </tr>
 
-<table class="center">
-  <tr>
-    <th>Date</th>
-    <th>Event</th>
-    <th>Time</th>
-  </tr>
-  <tr>
-    <td>Date 1</td>
-    <td>Event 1</td>
-    <td>Time 1</td>
-  </tr>
-<tr>
-    <td>Date 2</td>
-    <td>Event 2</td>
-    <td>Time 2</td>
-  </tr>
-<tr>
-    <td>Date 3</td>
-    <td>Event 3</td>
-    <td>Time 3</td>
-  </tr>
-</table>
-
-<br>
-
-<h2>Contact Information</h2>
-
-<ul class = "a center">
-  <li>Sponsor: _____</li>
-  <li>Email: _____</li>
-  <li>Other Role: _____</li>
-  <li>Email: _____</li>
-
+    </table>
+  
 </body>
 </html>
