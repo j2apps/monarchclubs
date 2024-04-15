@@ -33,57 +33,66 @@ def authenticate():
 service = build("calendar", "v3", credentials=authenticate())
 
 '''
-start and end time must be in YYYY-MM-DDTHH:MM
+start and end time must be in YYYY-MM-DDTHH:MM:SS
 '''
-def create_event(name,desc,start,end):
+def create_event(name,desc,start,end,loc,contact):
     try:
             
         details  = {
             "summary": str(name),
             "description": str(desc),
             "start":{
-                "dateTime": f"{start}:00",
+                "dateTime": f"{start}",
                 "timeZone": "America/Denver"
                     
             },
             "end":{
-                "dateTime": f"{end}:00",
+                "dateTime": f"{end}",
                 "timeZone": "America/Denver"
-               }
+               },
+            "location": str(loc),
+            "creator":{
+                "displayName":str(contact)
+            }
         }
-            
+        event = service.events().insert(calendarId = cal_id, body = details).execute()
+        return event['id']
     except HttpError as error:
-        print(error)
-    event = service.events().insert(calendarId = cal_id, body = details).execute()
+        return None
     
-    return event['id']
+    
+    
 
 def delete_event(event_id):
     try:
         service.events().delete(calendarId = cal_id, eventId = event_id).execute()
         
     except HttpError as error:
-        print(error)
+        return None
 
         
 
-def update_event(event_Id,name,desc,start,end):
+def update_event(event_Id,name,desc,start,end,loc,contact):
     try:
         details  = {
             "summary": str(name),
             "description": str(desc),
             "start":{
-                "dateTime": f"{start}:00",
+                "dateTime": f"{start}",
                 "timeZone": "America/Denver"
                     
             },
             "end":{
-                "dateTime": f"{end}:00",
+                "dateTime": f"{end}",
                 "timeZone": "America/Denver"
-               }
+               },
+            "location": str(loc),
+            "creator":{
+                "displayName":str(contact)
+            }
         }
         event = service.events().update(calendarId=cal_id,eventId=event_Id,body=details).execute()
         return event['id']
         
     except HttpError as error:
-        print(error)
+        return None
