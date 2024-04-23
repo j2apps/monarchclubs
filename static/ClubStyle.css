@@ -23,6 +23,29 @@ header.top-bar {
   margin-right: 1cqi;
 }
 
+.headerc {
+  background-color: #A67E2F;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 130px;
+}
+
+button {
+  background-color: #A67E2F;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 50px;
+}
+
 main {
   display: flex;
   flex-wrap: wrap; /* Wrap content on small screens */
@@ -36,21 +59,42 @@ main {
   border: 1px solid black;
   margin: 1rem;
 }
-table {
-  width: 65%;
-  border-collapse: collapse;
+/*unordered list*/
+ul.a {
+  list-style-type: none;
+  font-size: 50%;
 }
-
-th, td {
+.container {
+  width: 45%;
+  height: 500px;
+  background-color: #ffffff;
   border: 1px solid black;
-  padding: 5px;
+
+  display: inline-block;
+  overflow: scroll;
+  flex-direction: row;
+}
+tr{
+  background-color: #ffffff; }
+
+.center {
+  margin: auto;
+  font-size: 50%;
+  width: 60%;
+  border: 3px solid #A67E2F;
 }
 
-th {
-  text-align: center;
+table {
+font-family: arial;
+border-collapse: collapse;
+width: 100%;
 }
 
-
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
 
 
 /* Media Queries for smaller screens */
