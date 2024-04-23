@@ -1,5 +1,6 @@
 from google_api.google_sheets_api import *
 import numpy as np
+from cal_methods import *
 
 def check_club_edit():
     edit_df = get_df_from_sheet('club_edit')
@@ -91,12 +92,18 @@ def check_event_create():
     for i in approved_changes.index.to_list():
         row = approved_changes[approved_changes.index == i]
         new_event = create_event(row, event_df, club_df)
+        new_event_dict = new_event.to_dict('records')[0]
+        gcal_id = create_gcal_event_from_dict(new_event_dict)
+        new_event['gcal_id'] = gcal_id
+        print(new_event.to_dict('records')[0])
         event_df = pd.concat([event_df, new_event])
+
 
     # Remove event create requests that have either already been processed or have been marked unapproved
     '''remaining = create_df[~create_df['is_approved'].isin(['Y', 'y', 'N', 'n'])]
-    update_sheet_with_df('event_create', remaining)
-    update_sheet_with_df('event', event_df)'''
+    update_sheet_with_df('event_create', remaining)'''
+    event_df = event_df.replace(np.nan, '')
+    update_sheet_with_df('event', event_df)
 
 
 def create_event(new_event, event_df, club_df):
@@ -165,7 +172,7 @@ def run_checks():
 
 
 if __name__ == '__main__':
-    #check_club_edit()
-    #check_club_create()
-    #check_event_edit()
+    check_club_edit()
+    check_club_create()
+    check_event_edit()
     check_event_create()

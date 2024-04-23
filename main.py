@@ -49,6 +49,8 @@ def event(club_id: int, event_id: int):
     return render_template('')
 
 
+
+
 atexit.register(lambda: scheduler.shutdown())
 if __name__ == '__main__':
     app.run(port=1090)
